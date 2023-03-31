@@ -15,7 +15,7 @@ def doctors(request):
     return render(request,'doctors.html')
 
 def contact(request):
-    return render(request,'contact.html')
+    return render(request,'contacts.html')
 
 def departments(request):
     return render(request,'departments.html')
