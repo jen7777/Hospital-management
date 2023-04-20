@@ -1,17 +1,20 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-from .models import Departments
+from .models import Departments,Doctors
 # Create your views here.
 def index(request):
     return render(request,'home.html')      #or return HttpResponse("Home")
 def about(request):
     return render(request,'about.html')
 
-def booking(request):
+def bookings(request):
     return render(request,'booking.html')
 
 def doctors(request):
-    return render(request,'doctors.html')
+    dict_doc={
+        'doc' : Doctors.objects.all()
+    }
+    return render(request,'doctors.html',dict_doc)
 
 def contact(request):
     return render(request,'contact.html')

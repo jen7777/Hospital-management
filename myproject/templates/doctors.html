@@ -2,8 +2,23 @@
 
 {% block content %}
 <div class="text-center">
-    <h1>Our Doctors</h1>
+  <h1>Our Doctors</h1>
 </div>
 <hr>
+<div class="container text-left bg-light">
+  {% for d in doc %}
+  <div class="card-text-center mx-3 my-3" style=" width: 18rem; display:inline-block">
+    <img class="card-img-top" src="{{d.doc_image.url}}" alt="Card image cap">
+    <div class="card-body">
+      <h5 class="text-center">Dr. {{d.doc_name}}</h5>
+      <p class="text-center">{{d.doc_spec}}</p>
+
+    </div>
+  </div>
+
+
+{% endfor %}
 
 {% endblock %}
+
+
