@@ -39,6 +39,10 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'home',
+    'crispy_forms',
+    'crispy_bootstrap5',
+    
+
 ]
 
 MIDDLEWARE = [
@@ -127,3 +131,4 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 MEDIA_ROOT=BASE_DIR / 'UPLOADS'
 MEDIA_URL='/media/'
+CRISPY_TEMPLATE_PACK = 'bootstrap5'
