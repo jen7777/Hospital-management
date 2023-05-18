@@ -8,7 +8,7 @@
         {% csrf_token %}
         {{form|crispy}}
     
-        <a class="text-left">Already have an acconut</>
+        <a class="text-left" href="{% url 'login'%}">Already have an account? Login</>
         
         <hr>
         <button type="submit" class="btn btn-primary">Submit</button>

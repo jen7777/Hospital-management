@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from .models import Departments,Doctors
-from .forms import Bookingform
+from .forms import Bookingform,CreateUserForm
 from django.contrib.auth.forms import UserCreationForm 
 from django.contrib import messages 
 # Create your views here.
@@ -40,12 +40,12 @@ def departments(request):
   
 def register(request):
     if request.method=="POST":
-        form=UserCreationForm(request.POST)
+        form=CreateUserForm(request.POST)
         if form.is_valid():
             form.save()
             return render(request,'confirmation.html')
              
-    form=UserCreationForm()
+    form=CreateUserForm()
     dict_form={
         'form' : form
     }

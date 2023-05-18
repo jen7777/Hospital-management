@@ -24,3 +24,10 @@ class Bookings(models.Model):
     Booking_date=models.DateField()
     def __str__(self):
         return 'self.doc_name' 
+    
+class register(models.Model):
+    FullName=models.CharField(max_length=255)
+    Email=models.EmailField()
+    Username=models.CharField(max_length=255)
+    Password1=models.CharField(max_length=255)
+    Password2=models.CharField(max_length=255)
