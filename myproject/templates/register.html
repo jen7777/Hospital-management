@@ -3,11 +3,16 @@
 
 {% block content %}
 <h1 class="text-center">Register</h1>
-<div class='container w-50 text-center bg-blue'>
+<div class='container w-50 text-center bg-light'>
     <form action="" method="POST">
         {% csrf_token %}
         {{form|crispy}}
+    
+        <a class="text-left">Already have an acconut</>
+        
+        <hr>
         <button type="submit" class="btn btn-primary">Submit</button>
+        
     </form>
 
 {% endblock %}
