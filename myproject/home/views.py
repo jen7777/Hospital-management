@@ -41,9 +41,14 @@ def departments(request):
 def register(request):
     if request.method=="POST":
         form=CreateUserForm(request.POST)
+        p1=request.POST.get('Password1')
+        p2=request.POST.get('Password2')
         if form.is_valid():
-            form.save()
-            return render(request,'confirmation.html')
+            if p1 != p2:
+                messages.error(request, 'Password does not match')
+            else:
+                form.save()
+                return render(request,'confirmation.html')
              
     form=CreateUserForm()
     dict_form={

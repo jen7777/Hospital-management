@@ -7,8 +7,11 @@
     <form action="" method="POST">
         {% csrf_token %}
         {{form|crispy}}
-    
-        <a class="text-left" href="{% url 'login'%}">Already have an account? Login</>
+        {% for message in messages%}
+            <p id ="messages">{{message}}</p>
+        {% endfor %}
+        <h8>Already have an account?</h8>
+        <a class="text-left" href="{% url 'login'%}"> Login</>
         
         <hr>
         <button type="submit" class="btn btn-primary">Submit</button>
