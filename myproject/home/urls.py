@@ -10,6 +10,7 @@ path('about/',views.about,name='about'),
 path('bookings/',views.bookings,name='bookings'),
 path('doctors/',views.doctors,name='doctors'),
 path('contacts/',views.contact,name='contacts'),
-path('departments/',views.departments,name='departments')
-
+path('departments/',views.departments,name='departments'),
+path('register/',views.register,name='register'),
+path('login/',views.login,name='login'),
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)          #pic serving
