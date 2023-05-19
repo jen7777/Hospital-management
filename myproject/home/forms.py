@@ -1,5 +1,5 @@
 from django import forms 
-from .models import Bookings,register
+from .models import Bookings,register,login
 class DateInput(forms.DateInput):
         input_type='date'
         
@@ -34,3 +34,13 @@ class CreateUserForm(forms.ModelForm):
             'Password2':"Confirm Password",
         }
     
+class LoginForm(forms.ModelForm):
+    
+    class Meta:
+        model=login
+        fields='__all__'
+        
+        labels={
+            'Username':"Username",
+            'Password1':"Password",
+        }

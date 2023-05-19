@@ -31,3 +31,7 @@ class register(models.Model):
     Username=models.CharField(max_length=255)
     Password1=models.CharField(max_length=255)
     Password2=models.CharField(max_length=255)
+
+class login(models.Model):
+    Username=models.CharField(max_length=255)
+    Password1=models.CharField(max_length=255)

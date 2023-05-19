@@ -1,9 +1,10 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from .models import Departments,Doctors
-from .forms import Bookingform,CreateUserForm
+from .forms import Bookingform,CreateUserForm,LoginForm
 from django.contrib.auth.forms import UserCreationForm 
 from django.contrib import messages 
+from django.contrib.auth import authenticate,login,logout
 # Create your views here.
 def index(request):
     return render(request,'home.html')      #or return HttpResponse("Home")
@@ -57,4 +58,18 @@ def register(request):
     return render(request,'register.html',dict_form)
     
 def login(request):
-    return render(request,'login.html')
+    if request.method=="POST":
+        form=LoginForm(request.POST)
+        Username=request.POST.get('Username')
+        Password=request.POST.get('Password1')
+        user=authenticate(request,username=Username,password=Password)
+        if user is not None:
+                return render(request,'home.html')
+        else:
+            messages.warning(request,'Incorrect username or password')     
+    form=LoginForm()
+    dict_form={
+        'form' : form
+    }
+    return render(request,'login.html',dict_form)
+    
