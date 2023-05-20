@@ -7,8 +7,17 @@
     <form action="" method="POST">
         {% csrf_token %}
         {{form|crispy}}
-    
-        <a class="text-left">Already have an acconut</>
+        {% if messages %}
+		<div class="messages">
+		{% for message in messages %}
+			<div class="alert {% if message.tags %}alert-{{ message.tags }}"{% endif %}>
+				{{ message }}
+			</div>
+		{% endfor %}
+		</div>
+        {% endif %}
+        <h8>Already User?</h8>
+        <a class="text-left" href="{% url 'login'%}"> Login</>
         
         <hr>
         <button type="submit" class="btn btn-primary">Submit</button>

@@ -1,9 +1,10 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from .models import Departments,Doctors
-from .forms import Bookingform
+from .forms import Bookingform,CreateUserForm,LoginForm
 from django.contrib.auth.forms import UserCreationForm 
 from django.contrib import messages 
+from django.contrib.auth import authenticate,login,logout
 # Create your views here.
 def index(request):
     return render(request,'home.html')      #or return HttpResponse("Home")
@@ -40,16 +41,35 @@ def departments(request):
   
 def register(request):
     if request.method=="POST":
-        form=UserCreationForm(request.POST)
+        form=CreateUserForm(request.POST)
+        p1=request.POST.get('Password1')
+        p2=request.POST.get('Password2')
         if form.is_valid():
-            form.save()
-            return render(request,'confirmation.html')
+            if p1 != p2:
+                messages.error(request, 'Password does not match')
+            else:
+                form.save()
+                return render(request,'confirmation.html')
              
-    form=UserCreationForm()
+    form=CreateUserForm()
     dict_form={
         'form' : form
     }
     return render(request,'register.html',dict_form)
     
 def login(request):
-    return render(request,'login.html')
+    if request.method=="POST":
+        form=LoginForm(request.POST)
+        Username=request.POST.get('Username')
+        Password=request.POST.get('Password1')
+        user=authenticate(request,username=Username,password=Password)
+        if user is not None:
+                return render(request,'home.html')
+        else:
+            messages.warning(request,'Incorrect username or password')     
+    form=LoginForm()
+    dict_form={
+        'form' : form
+    }
+    return render(request,'login.html',dict_form)
+    

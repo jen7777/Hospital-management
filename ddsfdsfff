@@ -1,0 +1,59 @@
+[33mcommit d5597ce78d0de796b585709aac93275336afcf9d[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m, [m[1;31mjen/master[m[33m)[m
+Author: jen7777 <66324489+jen7777@users.noreply.github.com>
+Date:   Fri May 19 10:21:31 2023 -0500
+
+    Password match
+
+[33mcommit c3e73f26343679d65718665c9a51ff8d3fe205b7[m
+Author: jen7777 <66324489+jen7777@users.noreply.github.com>
+Date:   Thu May 18 15:31:19 2023 -0500
+
+    .
+
+[33mcommit 72b30e00678cb1de1d6be4fbb1a887d116df2e07[m
+Author: jen7777 <66324489+jen7777@users.noreply.github.com>
+Date:   Thu May 18 00:48:17 2023 -0500
+
+    Register to db
+
+[33mcommit e9ba609d64436114fea0cbc9ebbcfbc63100004a[m
+Author: jen7777 <66324489+jen7777@users.noreply.github.com>
+Date:   Thu May 18 00:12:19 2023 -0500
+
+    Register to db
+
+[33mcommit dbd189bbc788b558aa60bc4f8f3b6532fccb04fe[m[33m ([m[1;31morigin/master[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: jen7777 <66324489+jen7777@users.noreply.github.com>
+Date:   Wed Apr 26 22:40:17 2023 -0500
+
+    Booking added
+
+[33mcommit f62a5a847a50d46b816e60c7eb6b1d0bb7eed6e0[m
+Author: jen7777 <66324489+jen7777@users.noreply.github.com>
+Date:   Wed Apr 19 22:23:30 2023 -0500
+
+    Doctors added
+
+[33mcommit e9118795cba4918b48e4cbcf40bdb03a13ebc437[m
+Author: jen7777 <66324489+jen7777@users.noreply.github.com>
+Date:   Fri Apr 14 12:36:40 2023 -0500
+
+    Completed department
+
+[33mcommit bdaadacd7821ada5fdd4ef06ba63b4427172a882[m
+Author: jen7777 <66324489+jen7777@users.noreply.github.com>
+Date:   Thu Mar 30 23:30:49 2023 -0500
+
+    Added images, temp edits
+
+[33mcommit 3d6378a694788065900930e6a4e698e941e0c5ca[m
+Author: jen7777 <66324489+jen7777@users.noreply.github.com>
+Date:   Sun Mar 19 14:26:42 2023 -0500
+
+    Added bootstap layout to index.html
+
+[33mcommit 71db0de867320b398d9db3620e6dda479240e14f[m
+Author: jen7777 <66324489+jen7777@users.noreply.github.com>
+Date:   Sun Mar 19 12:22:22 2023 -0500
+
+    Base template created
