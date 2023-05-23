@@ -4,10 +4,19 @@
 {% block content %}
     <h1 class="text-center">Make an appointment</h1>
 <hr>
-<div class='container w-50 text-center bg-blue'>
+<div class='container w-50 text-center bg-light'>
     <form action="" method="POST">
         {% csrf_token %}
         {{form|crispy}}
+        {% if messages %}
+		<div class="messages">
+		{% for message in messages %}
+			<div class="alert {% if message.tags %}alert-{{ message.tags }}"{% endif %}>
+				{{ message }}
+			</div>
+		{% endfor %}
+		</div>
+        {% endif %}
         <button type="submit" class="btn btn-primary">Submit</button>
     </form>
     {% endblock %}

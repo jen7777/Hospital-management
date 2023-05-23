@@ -1,5 +1,7 @@
 from django import forms 
-from .models import Bookings,register,login
+from .models import Bookings,login
+from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.models import User
 class DateInput(forms.DateInput):
         input_type='date'
         
@@ -20,11 +22,11 @@ class Bookingform(forms.ModelForm):
             'Booking_date' : "Booking date",
         }
 
-class CreateUserForm(forms.ModelForm):
+class CreateUserForm(UserCreationForm):           #createUser inherited from inbuilt userCreationForm
     
     class Meta:
-        model=register
-        fields=['FullName','Email','Username','Password1','Password2']
+        model=User
+        fields=['username','email','password1','password2']
         
         labels={
             'FullName': "Full Name",
@@ -33,7 +35,7 @@ class CreateUserForm(forms.ModelForm):
             'Password1':"Password",
             'Password2':"Confirm Password",
         }
-    
+        
 class LoginForm(forms.ModelForm):
     
     class Meta:

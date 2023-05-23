@@ -3,6 +3,7 @@ from django.http import HttpResponse
 from .models import Departments,Doctors
 from .forms import Bookingform,CreateUserForm,LoginForm
 from django.contrib.auth.forms import UserCreationForm 
+from django.contrib.auth.models import User
 from django.contrib import messages 
 from django.contrib.auth import authenticate,login,logout
 # Create your views here.
@@ -16,7 +17,7 @@ def bookings(request):
         form=Bookingform(request.POST)
         if form.is_valid():
             form.save()
-            return render(request,'confirmation.html')
+            messages.success(request,'We recieved your booking request')
              
     form=Bookingform()
     dict_form={
