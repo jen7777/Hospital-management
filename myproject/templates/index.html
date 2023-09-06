@@ -20,14 +20,22 @@
       href="https://use.fontawesome.com/releases/v5.2.0/css/all.css">
     <link rel="stylesheet"
           href="{% static '/static/css/style.css' %}">
-
+          <style>
+            #logo-icon{
+              width:30px;
+              display: inline-block;
+              
+            }
+          </style>
   </head>
-
+  
   <body>
 
     <nav class="navbar bg-primary navbar-expand-md ">
       <div class="container">
+        <img id="logo-icon" src="{% static 'images/hospital.png'%}">
         <div class="col-2 text-left pl-md-0">
+          <h2 class="text-white"></h2>
           <h2 class="text-white"> Parkway_Hospital </h2>
         </div>
 
@@ -38,17 +46,16 @@
               <a class="nav-link text-white" href="{% url 'home'%}">Home </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link text-white" href="{% url 'about'%}">About</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link text-white" href="{% url 'bookings'%}">Booking</a>
+              <a class="nav-link text-white" href="{% url 'departments'%}">Departments</a>
             </li>
             <li class="nav-item">
               <a class="nav-link text-white" href="{% url 'doctors'%}">Doctors</a>
             </li>
-    <li class="nav-item">
-              <a class="nav-link text-white" href="{% url 'departments'%}">Departments</a>
+            <li class="nav-item">
+              <a class="nav-link text-white" href="{% url 'bookings'%}">Booking</a>
             </li>
+            
+            
             <li class="nav-item">
               <a class="nav-link text-white" href="{% url 'contacts'%}">Contact Us</a>
             </li>

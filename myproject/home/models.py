@@ -29,3 +29,8 @@ class Bookings(models.Model):
 class login(models.Model):
     Username=models.CharField(max_length=255)
     Password1=models.CharField(max_length=255)
+    
+class Contact(models.Model):
+    name=models.CharField(max_length=255)
+    email=models.EmailField()
+    message=models.CharField(max_length=500)

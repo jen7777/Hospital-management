@@ -46,9 +46,6 @@ def register(request):
         p1=request.POST.get('Password1')
         p2=request.POST.get('Password2')
         if form.is_valid():
-            if p1 != p2:
-                messages.error(request, 'Password does not match')
-            else:
                 form.save()
                 return render(request,'confirmation.html')
              
