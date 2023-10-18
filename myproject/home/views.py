@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-from .models import Departments,Doctors
+from .models import Departments,Doctors,Contact
 from .forms import Bookingform,CreateUserForm,LoginForm
 from django.contrib.auth.forms import UserCreationForm 
 from django.contrib.auth.models import User
@@ -9,8 +9,6 @@ from django.contrib.auth import authenticate,login,logout
 # Create your views here.
 def index(request):
     return render(request,'home.html')      #or return HttpResponse("Home")
-def about(request):
-    return render(request,'about.html')
 
 def bookings(request):
     if request.method=="POST":
@@ -32,6 +30,17 @@ def doctors(request):
     return render(request,'doctors.html',dict_doc)
 
 def contact(request):
+    if request.method=="POST":
+        contact=Contact()
+        name=request.POST.get('name')               #name input by user is copied to variable name
+        email=request.POST.get('email')
+        message=request.POST.get('message')
+                                                    
+        contact.name=name                           #name from variable name is copied to contact.name model(backend)
+        contact.email=email
+        contact.message=message
+        contact.save()                              #saving backend model class contact
+        return HttpResponse("Thanks")
     return render(request,'contact.html')
 
 def departments(request):

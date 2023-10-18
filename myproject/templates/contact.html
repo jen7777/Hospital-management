@@ -5,19 +5,20 @@
     <h1 class="text-center">Contact US</h1>
 <hr>
 <div class='container w-50 text-center bg-light'>
-    <form>
+    <form class="" method="post">
+      {% csrf_token %}
         <div class="mb-3">
           <label for="name" class="form-label">Your Name</label>
-          <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+          <input name='name' type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
           <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
         </div>
         <div class="mb-3">
           <label for="email" class="form-label">Your Email</label>
-          <input type="password" class="form-control" id="exampleInputPassword1">
+          <input name='email' type="email" class="form-control" id="exampleInputPassword1">     <!--attribute name=email added-->
         </div>
         <div class="mb-3">
             <label for="exampleFormControlTextarea1" class="form-label">Message</label>
-            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+            <textarea name='message' class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
           </div>
         <button type="submit" class="btn btn-primary">Submit</button>
       </form>

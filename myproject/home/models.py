@@ -25,7 +25,13 @@ class Bookings(models.Model):
     def __str__(self):
         return 'self.doc_name' 
     
-
+class register(models.Model):
+    FullName=models.CharField(max_length=255)
+    Email=models.EmailField()
+    Username=models.CharField(max_length=255)
+    Password1=models.CharField(max_length=255)
+    Password2=models.CharField(max_length=255)
+    
 class login(models.Model):
     Username=models.CharField(max_length=255)
     Password1=models.CharField(max_length=255)
@@ -33,4 +39,6 @@ class login(models.Model):
 class Contact(models.Model):
     name=models.CharField(max_length=255)
     email=models.EmailField()
-    message=models.CharField(max_length=500)
+    message=models.TextField(max_length=500)
+    def __str__(self):
+        self.name
